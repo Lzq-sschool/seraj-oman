@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Aref+Ruqaa+Ink:wght@400;700&display=swap');
+
+html body :is(h1, h2, h3, h4, h5, h6, [role="heading"]) {
+  font-family: "Aref Ruqaa", serif !important;
+  font-synthesis: none;
+}
+
+
+/* Main title stays in its existing hero position; secondary page titles align right. */
+html body.homepage .hero h1 { color: #fff !important; }
+html body:not(.homepage) h1 { color: #fff !important; text-align: right; }
+html body:not(.homepage) h1 :is(span, em) { color: #fff !important; }
+/* Keep standalone account and review titles readable on their light page backgrounds. */
+html body:not(.homepage) :is(.box, .wrap) > h1 {
+  background: #102b25;
+  border-right: 4px solid #b28c53;
+  border-radius: 4px;
+  padding: 12px 18px;
+}
+html body:not(.homepage) .loginpage h1 {
+  background: #102b25;
+  border-right: 4px solid #b28c53;
+  border-radius: 4px;
+  padding: 12px 18px;
+}
+
+/* Force clean white title glyphs; earlier gold shadows made them read as red. */
+html body.homepage .hero h1,
+html body.homepage .hero h1 * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .58) !important;
+}
+html body:not(.homepage) h1,
+html body:not(.homepage) h1 * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-align: right;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .55) !important;
+}
